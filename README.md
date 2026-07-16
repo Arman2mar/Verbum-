@@ -134,3 +134,56 @@ Verbum Tech Solution
 Lema
 
 Del conocimiento a la decisión.
+
+---
+
+Infra - Scaffold mínimo
+
+Se añadió un scaffold mínimo de infraestructura para convertir este repositorio en el "núcleo" ejecutable del ecosistema.
+
+Archivos incluidos en este bloque:
+
+- app/main.py: entrypoint FastAPI y montaje de routers en /v1
+- app/api/v1/health.py: endpoint /v1/health para checks de disponibilidad
+- app/api/v1/info.py: endpoint /v1/info con metadatos de la aplicación
+- app/core/config.py: configuración central (Pydantic BaseSettings)
+- app/models/common.py: schemas Pydantic mínimos para infra
+- .env.example: variables de entorno de ejemplo
+- Dockerfile: imagen mínima para ejecutar la app
+
+Alcance y restricciones de este bloque:
+
+- No se añadió lógica de negocio (Lex, Finance, Business, etc.).
+- No se añadió integración con bases de datos, Temporal, proveedores de IA ni autenticación.
+- No se añadieron migraciones ni workers.
+- OpenAPI y documentación se sirven con la configuración estándar de FastAPI.
+
+Cómo ejecutar localmente (rápido):
+
+1) desde la raíz del repo crear un entorno virtual:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install "fastapi" "uvicorn[standard]"
+```
+
+2) ejecutar la app:
+
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+
+3) revisar:
+
+- http://localhost:8000/v1/health
+- http://localhost:8000/v1/info
+- Documentación interactiva: http://localhost:8000/docs
+
+Próximos pasos propuestos (tras revisar este bloque):
+
+- Añadir pyproject.toml y gestión de dependencias.
+- Añadir docker-compose para desarrollo (Postgres, Temporal).
+- Scaffold para NexoRouter, Temporal y conexión a DB (en bloques separados y controlados).
+
+Si estás de acuerdo, continuamos con el siguiente bloque cuando lo autorices.
