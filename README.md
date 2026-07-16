@@ -57,6 +57,12 @@ Objetivos
 
 ---
 
+Nota arquitectónica
+
+Este repositorio contiene exclusivamente la infraestructura y contratos de Verbum Core. Los módulos de negocio (Verbum Lex, Verbum Finance, Verbum Business y otros) viven en repositorios separados y consumirán Verbum Core mediante API HTTP y contratos OpenAPI.
+
+---
+
 Arquitectura
 
 Verbum Core
