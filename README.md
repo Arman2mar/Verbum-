@@ -1,6 +1,6 @@
 # Verbum-
 El centro de todo centro.
-🟠 Verbum
+🟠 Verbum.
 
 «La Plataforma Integral de Inteligencia Empresarial para Cuba»
 
